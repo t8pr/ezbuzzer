@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EZBuzzer</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <button class="theme-toggle" id="themeToggle">🌓</button>
+        <div class="header">
+            <h1 class="logo">Abo7amdan Buzz</h1>
+            <p class="ar subtitle">سرعععع لعبك</p>
+        </div>
+        
+        <div class="join-form">
+            <div class="input-group">
+                <label for="playerName">Your Name</label>
+                <input type="text" id="playerName" placeholder="Enter your name" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="roomSelect">Room Number</label>
+                <select id="roomSelect">
+                    {% for i in range(1, max_rooms+1) %}
+                    <option value="{{ i }}">Room {{ i }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <button id="joinBtn" class="btn btn-primary">
+                Join Room
+            </button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EZBuzzer - Room {{ room_id }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="buzz-nav">
+        <div class="nav-container">
+            <div class="buzz-indicator">
+                <span id="buzzerName">Waiting for buzz...</span>
+            </div>
+            <button class="reset-btn" id="resetBtn">Reset</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <button class="theme-toggle" id="themeToggle">🌓</button>
+        <button class="back-btn" id="backBtn">← Back</button>
+        
+        <div class="header">
+            <h1 class="logo">Room {{ room_id }}</h1>
+            <p class="subtitle" id="roomStatus">Connecting...</p>
+        </div>
+        
+        <div class="player-list-container">
+            <h3>Players in room:</h3>
+            <ul id="players" class="player-list"></ul>
+        </div>
+        
+        <div class="buzzer-container">
+            <button id="buzzer">BUZZ!</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>

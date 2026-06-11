@@ -3,18 +3,14 @@ let playerName;
 let roomId;
 let isHost = false;
 
-// Initialize when DOM loads
 document.addEventListener('DOMContentLoaded', () => {
-    // Theme toggle
     const themeToggle = document.getElementById('themeToggle');
     if (themeToggle) {
         themeToggle.addEventListener('click', toggleTheme);
-        // Initialize theme
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
     }
 
-    // Join room button
     const joinBtn = document.getElementById('joinBtn');
     if (joinBtn) {
         joinBtn.addEventListener('click', () => {
@@ -30,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Initialize room if on room page
     if (document.getElementById('buzzer')) {
         initializeRoom();
     }
@@ -44,19 +39,16 @@ function toggleTheme() {
 }
 
 function initializeRoom() {
-    // Get room ID and player name from URL
     const pathParts = window.location.pathname.split('/');
     roomId = parseInt(pathParts[pathParts.length - 1]);
     const urlParams = new URLSearchParams(window.location.search);
     playerName = urlParams.get('name');
     
-    // Set up socket connection
     socket = io({
         transports: ['websocket'],
         upgrade: false
     });
 
-    // Socket event handlers
     socket.on('connect', () => {
         console.log('Connected to server');
         socket.emit('join', {
@@ -92,7 +84,6 @@ function initializeRoom() {
         setTimeout(() => window.location.href = '/', 2000);
     });
 
-    // Set up buzzer button
     const buzzer = document.getElementById('buzzer');
     if (buzzer) {
         buzzer.addEventListener('click', () => {
@@ -105,7 +96,6 @@ function initializeRoom() {
         });
     }
 
-    // Set up reset button
     const resetBtn = document.getElementById('resetBtn');
     if (resetBtn) {
         resetBtn.addEventListener('click', () => {
@@ -115,7 +105,6 @@ function initializeRoom() {
         });
     }
 
-    // Set up back button
     const backBtn = document.getElementById('backBtn');
     if (backBtn) {
         backBtn.addEventListener('click', () => {
@@ -149,7 +138,6 @@ function updatePlayerList(players) {
             `;
             playersList.appendChild(li);
 
-            // Add kick event listeners
             if (isHost && index > 0) {
                 li.querySelector('.kick-btn').addEventListener('click', (e) => {
                     socket.emit('kick_player', {

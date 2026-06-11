@@ -285,7 +285,6 @@ input:focus, select:focus {
   to { opacity: 0; }
 }
 
-/* Responsive adjustments */
 @media (max-width: 480px) {
   .container {
     padding: 1.5rem;
@@ -306,7 +305,6 @@ input:focus, select:focus {
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600&family=SF+Pro+Display:wght@300;400;500;600&display=swap');
 
 :root {
-  /* Light theme */
   --primary: #6C5CE7;
   --primary-dark: #5649C0;
   --secondary: #FD79A8;
@@ -382,7 +380,6 @@ body {
 }
 
 
-/* Add theme toggle styles */
 .theme-toggle {
   position: absolute;
   top: 1.5rem;
@@ -408,7 +405,6 @@ body {
   font-family: var(--font-body);
 }
 
-/* Update input and player card colors for dark mode */
 input, select {
   background-color: var(--input-bg);
   border: 2px solid #e0e0e0;
@@ -419,7 +415,6 @@ input, select {
   background-color: var(--player-card);
 }
 
-/* Add to existing media query */
 @media (max-width: 480px) {
   .theme-toggle {
     top: 1rem;
@@ -434,7 +429,6 @@ input, select {
   }
 }
 
-/* Add these to your existing CSS */
 #buzzer {
     transition: transform 0.1s ease, background-color 0.2s ease;
 }
@@ -444,12 +438,10 @@ input, select {
     background-color: var(--primary-dark);
 }
 
-/* Optimize animations */
 * {
     will-change: transform, opacity;
 }
 
-/* Socket connection indicator */
 .connection-status {
     position: fixed;
     bottom: 10px;
@@ -525,7 +517,6 @@ body {
     font-weight: bold;
     color: var(--primary);
 }
-/* Add these to your existing CSS */
 #buzzer.locked {
     background-color: var(--danger);
     cursor: not-allowed;
@@ -545,7 +536,6 @@ body {
     background-color: rgba(108, 92, 231, 0.1);
 }
 
-/* Connection status indicator */
 .connection-status {
     position: fixed;
     bottom: 10px;
@@ -563,7 +553,6 @@ body {
 .connection-status.disconnected {
     background-color: #F44336;
 }
-/* Add these new styles */
 .buzz-nav {
     position: fixed;
     top: 0;
@@ -604,13 +593,10 @@ body {
     background-color: #f0f0f0;
 }
 
-/* Update container positioning */
 .container {
-    margin-top: 60px; /* Make space for the nav */
-    /* rest of your existing container styles */
+    margin-top: 60px;
 }
 
-/* Add these new styles */
 .player-list li {
     display: flex;
     justify-content: space-between;
@@ -670,7 +656,6 @@ body {
     100% { transform: scale(1); }
 }
 
-/* Player list styles */
 .player-list {
     width: 100%;
     margin: 1rem 0;
@@ -698,7 +683,6 @@ body {
     color: var(--primary);
 }
 
-/* Buzzer styles */
 #buzzer {
     transition: all 0.2s ease;
     font-size: 1.5rem;
@@ -716,7 +700,6 @@ body {
     100% { transform: scale(1); }
 }
 
-/* Notification styles */
 .notification {
     position: fixed;
     bottom: 20px;
@@ -743,7 +726,6 @@ body {
     background-color: var(--danger);
 }
 
-/* Kick button */
 .kick-btn {
     background-color: var(--danger);
     color: white;
